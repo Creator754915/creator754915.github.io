@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BTC Predicter</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+          <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4" id="navbarBody">
+          <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="images/blockfront_logo.jpg" class="h-8" alt="Flowbite Logo">
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Creator754915</span>
+          </a>
+          <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+              <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="openPage()">Buy a coffe</button>
+              <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false" id="NavBarButton" onclick="showNavbar()">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+          </div>
+          <div class="items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li>
+                <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+              </li>
+              <li>
+                <a href="about.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Projects</a>
+              </li>
+              <li>
+                <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+              </li>
+            </ul>
+          </div>
+          </div>
+        </nav>
+    
+        <br>
+        <br>
+
+        <section class="mt-20 text-center">
+          <h2 class="text-3xl font-semibold mb-6">Overview</h2>
+          <p class="text-gray-700 text-lg max-w-2xl mx-auto">
+            The <strong>Bitcoin Predicter</strong> is a machine learning-based repository designed to forecast Bitcoin prices using historical and real-time data. This tool applies AI techniques to analyze trends, model predictions, and provide insights for cryptocurrency traders and analysts.
+          </p>
+        </section>
+
+        <section class="mt-16 text-center">
+            <div class="bg-white p-6 shadow-lg rounded-lg max-w-4xl mx-auto">
+                <h3 class="font-bold text-xl mb-4">Sample Prediction Table</h3>
+                <table class="table-auto w-full text-left">
+                  <thead class="bg-gray-200">
+                    <tr>
+                      <th class="px-4 py-2">Date</th>
+                      <th class="px-4 py-2">Actual Price (USD)</th>
+                      <th class="px-4 py-2">Predicted Price (USD)</th>
+                      <th class="px-4 py-2">Error (%)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="bg-gray-50">
+                      <td class="px-4 py-2">2024-01-01</td>
+                      <td class="px-4 py-2">$29,000</td>
+                      <td class="px-4 py-2">$28,750</td>
+                      <td class="px-4 py-2">0.86%</td>
+                    </tr>
+                    <tr class="bg-white">
+                      <td class="px-4 py-2">2024-01-02</td>
+                      <td class="px-4 py-2">$29,500</td>
+                      <td class="px-4 py-2">$29,300</td>
+                      <td class="px-4 py-2">0.68%</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                      <td class="px-4 py-2">2024-01-03</td>
+                      <td class="px-4 py-2">$30,000</td>
+                      <td class="px-4 py-2">$29,980</td>
+                      <td class="px-4 py-2">0.07%</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="text-gray-600 text-sm mt-4">Note: Predictions are based on model training using past data trends.</p>
+            </div>
+        </section>
+
+        <section class="m-16 text-center">
+             <div class="bg-white p-6 shadow-lg rounded-lg max-w-4xl mx-auto">
+                <h2 class="text-3xl font-semibold mb-6">Prediction Chart (in month of 2024)</h2>
+                  <canvas class="mt-20" id="prixBleChart" width="100" height="50"></canvas>
+             </div>
+        </section>
+
+        <section class="mb-12">
+          <h2 class="text-3xl font-semibold mb-6 text-center">Technologies Used</h2>
+          <div class="m-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+              <h3 class="font-bold text-xl">Python</h3>
+              <p class="text-gray-700 mt-2">Core language for scripting and model implementation.</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+              <h3 class="font-bold text-xl">Pandas & NumPy</h3>
+              <p class="text-gray-700 mt-2">Libraries for data manipulation and numeric processing.</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+              <h3 class="font-bold text-xl">Scikit-learn</h3>
+              <p class="text-gray-700 mt-2">Used for model selection, training, and evaluation.</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+                <h3 class="font-bold text-xl">Yfinance</h3>
+                <p class="text-gray-700 mt-2">Used for fetch all the BTC data (price, date, volume, ect..).</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+              <h3 class="font-bold text-xl">Matplotlib</h3>
+              <p class="text-gray-700 mt-2">Visualization tool for graphical representation of predictions.</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg">
+              <h3 class="font-bold text-xl">Cryptocurrency APIs</h3>
+              <p class="text-gray-700 mt-2">APIs for accessing real-time and historical Bitcoin data.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-12 text-center">
+              <h2 class="text-3xl font-semibold mb-6">Getting Started</h2>
+              <p class="text-gray-700 text-lg mb-6">
+                To get started with Bitcoin Predicter, clone the repository and install required dependencies:
+              </p>
+              <pre class="bg-gray-800 text-left text-white p-6 rounded-lg inline-block"><code>git clone https://github.com/Creator754915/Bitcoin-Predicter
+cd Bitcoin-Predicter
+pip install -r requirements.txt
+python main.py</code></pre>
+        </section>
+        
+        <script>
+            // Les données sous format JSON
+            const btcPrice = [
+                {"mois": 1, "prix": 46029.90},
+                {"mois": 2, "prix": 50112.60},
+                {"mois": 3, "prix": 60305.31},
+                {"mois": 4, "prix": 79427.64},
+                {"mois": 5, "prix": 76104.30},
+                {"mois": 6, "prix": 62168.97},
+                {"mois": 7, "prix": 55384.82},
+                {"mois": 8, "prix": 68116.34},
+            ];
+        
+            const maxBtcPrice = [
+                {"mois": 1, "prix": 105980.36},
+                {"mois": 2, "prix": 119639.61},
+                {"mois": 3, "prix": 138399.76},
+                {"mois": 4, "prix": 167088.99},
+                {"mois": 5, "prix": 174082.89},
+                {"mois": 6, "prix": 170832.52},
+                {"mois": 7, "prix": 175014.46},
+                {"mois": 8, "prix": 201639.13},
+            ];
+        
+            const minBtcPrice = [
+                {"mois": 1, "prix": -16994.26},
+                {"mois": 2, "prix": -23498.47},
+                {"mois": 3, "prix": -23796.23},
+                {"mois": 4, "prix": -14811.42},
+                {"mois": 5, "prix": -28192.26},
+                {"mois": 6, "prix": -53225.42},
+                {"mois": 7, "prix": -71332.54},
+                {"mois": 8, "prix": -70634.92},
+            ]
+        
+            // Extraction des années et des prix pour le graphique
+            const month = btcPrice.map(data => data.mois);
+            const prix = btcPrice.map(data => data.prix);
+            const maxPrice = maxBtcPrice.map(data => data.prix);
+            const minPrice = minBtcPrice.map(data => data.prix);
+        
+            // Configuration du graphique
+            const ctx = document.getElementById('prixBleChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: month,
+                    datasets: [
+                        {
+                            label: 'Price of BTC (prediction in $)',
+                            data: prix,
+                            borderColor: 'blue',
+                            backgroundColor: 'rgba(0, 0, 255, 0.2)',
+                            borderWidth: 2,
+                            pointRadius: 3,
+                            pointBackgroundColor: 'blue',
+                            fill: true
+                        },{
+                            label: 'Max Price of BTC (prediction in $)',
+                            data: maxPrice,
+                            borderColor: 'yellow',
+                            backgroundColor: 'rgba(255, 255, 0, 0.1)',
+                            borderWidth: 2,
+                            pointRadius: 3,
+                            pointBackgroundColor: 'yellow',
+                            fill: true
+                        }, 
+                        {
+                            label: 'Minimun Price of BTC (prediction in $)',
+                            data: minPrice,
+                            borderColor: 'red',
+                            backgroundColor: 'rgba(255, 0, 255, 0.1)',
+                            borderWidth: 2,
+                            pointRadius: 3,
+                            pointBackgroundColor: 'red',
+                            fill: true
+                        }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: '2024 (month)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Price (in $)'
+                            },
+                            beginAtZero: false
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        },
+                        tooltip: {
+                            enabled: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
