@@ -2,7 +2,9 @@ nav {
   box-shadow: 0px -2px 10px black;
 }
 
-
+footer {
+  box-shadow: 0px 2px 10px black;
+}
 
 #navbar-sticky {
   visibility: visible;
