@@ -18,3 +18,21 @@ function showNavbar() {
     show = true;
   }
 }
+
+const button = document.getElementById('spotlight-button');
+
+button.addEventListener('mousemove', (e) => {
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    button.style.setProperty('--x', `${x}px`);
+    button.style.setProperty('--y', `${y}px`);
+});
+
+button.addEventListener('click', (e) => {
+    const rect = button.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const clickY = e.clientY - rect.top;
+    button.style.setProperty('--click-x', `${clickX}px`);
+    button.style.setProperty('--click-y', `${clickY}px`);
+});
