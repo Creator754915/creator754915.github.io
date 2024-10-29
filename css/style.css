@@ -30,12 +30,12 @@ nav {
 }
 
 #spotlight-button {
-    position: relative;
+    /*position: relative;*/
     padding: 10px 20px;
     font-size: 1.2em;
-    color: #fff;
+    color: white;
     background: none;
-    border: 2px solid #fff;
+    border: 2px solid black;
     cursor: pointer;
     overflow: hidden;
     transition: color 0.3s;
@@ -49,7 +49,7 @@ nav {
     left: var(--x, 50%);
     width: 200px;
     height: 200px;
-    background: radial-gradient(circle, rgba(255,255,255,0.6), transparent 70%);
+    background: radial-gradient(circle, rgba(9, 9, 224,0.6), transparent 70%);
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: transform 0.1s;
