@@ -20,3 +20,61 @@ nav {
 #navbar-sticky {
   visibility: visible;
 }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+}
+
+#spotlight-button {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background: none;
+    border: 2px solid #fff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.3s;
+    border-radius: 25px;
+}
+
+#spotlight-button::before {
+    content: '';
+    position: absolute;
+    top: var(--y, 50%);
+    left: var(--x, 50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.6), transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.1s;
+    pointer-events: none;
+}
+
+#spotlight-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#spotlight-button::after {
+    content: '';
+    position: absolute;
+    top: var(--click-y, 50%);
+    left: var(--click-x, 50%);
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s, opacity 0.4s;
+    pointer-events: none;
+}
+
+#spotlight-button:active::after {
+    transform: translate(-50%, -50%) scale(10);
+    opacity: 0;
+}
