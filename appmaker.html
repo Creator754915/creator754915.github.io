@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppMaker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animation for fade-in effect */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4" id="navbarBody">
+      <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="images/blockfront_logo.jpg" class="h-8" alt="Flowbite Logo">
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Creator754915</span>
+      </a>
+      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="openPage()">Buy a coffe</button>
+          <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false" id="NavBarButton" onclick="showNavbar()">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+        </button>
+      </div>
+      <div class="items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+        <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="index.html" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="about.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+          </li>
+          <li>
+            <a href="projects.html" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Projects</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+
+    <section class="mt-20 text-center p-8 fade-in">
+        <h2 class="text-3xl font-bold mb-4">Introduction to AppMaker</h2>
+        <p class="text-lg max-w-2xl mx-auto">
+            <strong>AppMaker</strong> is an innovative software that allows users to create applications easily by dynamically adding buttons, interactive elements, and much more.
+        </p>
+    </section>
+
+    <section id="features" class="mt-16 bg-white p-8 shadow-lg rounded-lg max-w-5xl mx-auto text-center fade-in border border-gray-300">
+        <h3 class="text-2xl font-bold mb-6">Features</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h4 class="font-semibold text-xl">Dynamic Element Addition</h4>
+                <p class="text-gray-700 mt-2">Easily add buttons, images, and text with just a few clicks.</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h4 class="font-semibold text-xl">Intuitive Interface</h4>
+                <p class="text-gray-700 mt-2">Simple design and easy navigation.</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h4 class="font-semibold text-xl">Real-Time Preview</h4>
+                <p class="text-gray-700 mt-2">See changes in real-time as you create.</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h4 class="font-semibold text-xl">Full Customization</h4>
+                <p class="text-gray-700 mt-2">Adjust colors, styles, and more for each element.</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h4 class="font-semibold text-xl">Multi-Platform Support</h4>
+                <p class="text-gray-700 mt-2">Compatible with web, mobile, and desktop applications.</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h4 class="font-semibold text-xl">Easy Export</h4>
+                <p class="text-gray-700 mt-2">Export your projects in various formats.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="libraries" class="mt-16 bg-gray-50 p-8 shadow-lg rounded-lg max-w-5xl mx-auto text-center fade-in border border-gray-300">
+        <h3 class="text-2xl font-bold mb-6">Libraries Used</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h4 class="font-semibold text-xl">Tkinter</h4>
+                <p class="text-gray-700 mt-2">Standard module for creating graphical interfaces in Python.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h4 class="font-semibold text-xl">CustomTkinter</h4>
+                <p class="text-gray-700 mt-2">Extension of Tkinter for a modern and customizable style.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h4 class="font-semibold text-xl">Math</h4>
+                <p class="text-gray-700 mt-2">Library for advanced mathematical operations.</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <h4 class="font-semibold text-xl">OS</h4>
+                <p class="text-gray-700 mt-2">Module for interacting with the operating system.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="mt-16 p-8 fade-in">
+        <h3 class="text-2xl font-bold text-center mb-6">Gallery</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <img src="https://github.com/user-attachments/assets/83f545de-eb28-4cda-ae77-044664356064" alt="Screenshot 1" class="rounded-lg shadow transform hover:scale-105 transition duration-300">
+            <img src="https://github.com/user-attachments/assets/74e843e5-d7d7-4111-97f7-9d7cd91460c7" alt="Screenshot 2" class="rounded-lg shadow transform hover:scale-105 transition duration-300">
+            <img src="images/screenshot3.jpg" alt="Screenshot 3" class="rounded-lg shadow transform hover:scale-105 transition duration-300">
+            <img src="images/screenshot4.jpg" alt="Screenshot 4" class="rounded-lg shadow transform hover:scale-105 transition duration-300">
+            <img src="images/screenshot5.jpg" alt="Screenshot 5" class="rounded-lg shadow transform hover:scale-105 transition duration-300">
+            <img src="images/screenshot6.jpg" alt="Screenshot 6" class="rounded-lg shadow transform hover:scale-105 transition duration-300">
+        </div>
+    </section>
+
+    <script>
+        const elements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        elements.forEach(element => observer.observe(element));
+    </script>
+
+</body>
+</html>
