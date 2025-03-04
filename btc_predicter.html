@@ -146,7 +146,6 @@ python BitcoinDataVisioner.py</code></pre>
         </section>
         
         <script>
-            // Les données sous format JSON
             const btcPrice = [
                 {"mois": 1, "prix": 46029.90},
                 {"mois": 2, "prix": 50112.60},
@@ -180,13 +179,11 @@ python BitcoinDataVisioner.py</code></pre>
                 {"mois": 8, "prix": -70634.92},
             ]
         
-            // Extraction des années et des prix pour le graphique
             const month = btcPrice.map(data => data.mois);
             const prix = btcPrice.map(data => data.prix);
             const maxPrice = maxBtcPrice.map(data => data.prix);
             const minPrice = minBtcPrice.map(data => data.prix);
         
-            // Configuration du graphique
             const ctx = document.getElementById('prixBleChart').getContext('2d');
             new Chart(ctx, {
                 type: 'line',
